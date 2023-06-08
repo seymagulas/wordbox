@@ -1,0 +1,21 @@
+.loginContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 300px ;
+}
+
+.formContainer{
+display: flex;
+flex-direction: column;
+
+max-width: 500px;
+}
+
+.btn-login {
+  background-color: black;
+}
+
+.btn-login:hover {
+  background-color: white;
+}
