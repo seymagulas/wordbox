@@ -1,21 +1,24 @@
-body {
+.loginContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   background: #FFDFBA;
   background: -webkit-linear-gradient(90deg, #FFDFD3, #FFDFBA);
   background: linear-gradient(90deg, #FFDFD3, #FFDFBA);
 }
 
-.loginContainer{
+.loginContainer form {
+  width: 450px;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin: 300px ;
+  padding: 16px 32px;
+
 }
 
 .formContainer{
-display: flex;
-flex-direction: column;
-
-max-width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn-login {

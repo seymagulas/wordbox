@@ -11,7 +11,7 @@ const NavBar: React.FC = () => {
       await logout(); 
       navigate('/');
     } catch (error) {
-      toast.error(error.data.message);
+      toast.error(error.response.data.message);
     }
   }
 

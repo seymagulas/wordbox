@@ -49,8 +49,8 @@ const Login: React.FC = () =>  {
 
   return (
     <section className="loginContainer">
-      <h1>Login</h1>
       <form onSubmit={handleSubmit(handleValidSubmit)}>
+        <h1>Login</h1>
         <div className="mb-3">
           <label htmlFor="inputEmail" className="form-label">Email address</label>
           <input type="email" className="form-control" id="inputEmail" {...register('email')} />
@@ -68,13 +68,11 @@ const Login: React.FC = () =>  {
         <div className="d-grid gap-2">
           <button type="submit" disabled={isSubmitted || !isDirty || !isValid} className="btn btn-primary">Login</button>
         </div>
-      </form>
-      <p>
-        New Member?<br />
-        <span className="line">
+        <p>
+          New Member?<br />
           <Link to={'/register'} className="nav-link active">Sign up</Link>
-        </span>
-      </p>
+        </p>
+      </form>
     </section>
   );
 }  

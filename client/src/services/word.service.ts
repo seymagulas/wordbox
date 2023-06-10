@@ -7,14 +7,12 @@ const API_URL = process.env.REACT_APP_API_BASE_URL;
 const DICTIONARY_URL = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
 
 export const getList = async () => {
-  return axios
-  .get(API_URL + "/word", { headers: authHeader() })
-  .then((response) => {
-    return response.data;
-  })
-  .catch((error) => {
+  try {
+    const response = await axios.get(API_URL + "/word", { headers: authHeader() });
+    return response.data
+  } catch (error) {
     toast.error(error.response.data.message);
-  });
+  }
 };
 
 export interface AddWordProps {
@@ -23,18 +21,15 @@ export interface AddWordProps {
 }
 
 export const addWord = async ({ word, meaning }: AddWordProps) => {
-  return axios
-    .post(API_URL + "/word", {
+  try {
+    const response = await axios.post(API_URL + "/word", {
       word,
       meaning
-    }, { headers: authHeader() })
-    .then((response) => {
-      console.log(response);
-      return response.data;
-    })
-    .catch((error) => {
-      toast.error(error.response.data.message);
-    });
+    }, { headers: authHeader() });
+    return response.data;
+  } catch (error) {
+    toast.error(error.response.data.message);
+  }
 };
 
 export interface SearchWordProps {
@@ -42,10 +37,10 @@ export interface SearchWordProps {
 }
 
 export const searchWord = async ({ word }: SearchWordProps): Promise<Meaning[]> => {
-  return await axios
-  .get(DICTIONARY_URL + word)
-  .then((response) => {
-    console.log(response);
+  try {
+    const response = await axios.get(DICTIONARY_URL + word);
     return response.data[0]['meanings'];
-  });
+  } catch (error) {
+    toast.error(error);
+  }
 }

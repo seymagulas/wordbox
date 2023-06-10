@@ -18,8 +18,8 @@ const SearchList: React.FC<SearchListProps> = ({ search, meanings, handleFetchLi
     <div>
       {meanings.map(meaning => 
         meaning.definitions && 
-        meaning.definitions.map(definition => 
-        <SearchCard handleAddWord={handleAddWord} type={meaning.partOfSpeech} item={definition}/>
+        meaning.definitions.map((definition, key) => 
+        <SearchCard key={key} handleAddWord={handleAddWord} type={meaning.partOfSpeech} item={definition}/>
         ))}
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from "react";
 import { Outlet } from 'react-router-dom';
 import { WordResponse } from '../components/word/interface';
 import { getList } from '../services/word.service';
@@ -13,7 +13,6 @@ const WordProvider = () => {
   const handleFetchList = () => {
     getList().then(wordsData => setWords(wordsData));
   }
-
   return <Outlet context={{ words, handleFetchList }} />;
 };
 
