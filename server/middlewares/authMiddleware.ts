@@ -7,8 +7,8 @@ export interface CustomRequest extends Request {
   user: UserModel;
 }
 
-type tokenProps = {
-  id: number
+interface tokenProps {
+  id: number;
 }
 
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
@@ -16,8 +16,9 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
   if (!authHeaders) {
     return res.sendStatus(403);
   }
-  const token = authHeaders.split(' ')[1].replace(/"/g, '');
+  
   try {
+    const token = authHeaders.split(' ')[1].replace(/"/g, '');
     const { id } = jwt.verify(token, SECRET_KEY) as tokenProps;
     const user = await User.findOne({ where: { id } });
     

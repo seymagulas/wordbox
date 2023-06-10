@@ -1,22 +1,34 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import AuthGuard from './services/auth.guard';
 
 import Register from './components/register/Register';
 import Login from './components/login/Login';
 import Main from './components/main/Main';
 import NotFound from './components/notFound/NotFound';
+import Word from './components/word/Word';
+import WordProvider from './providers/WordProvider';
+import AddWord from './components/word/addWord/AddWord';
+import NavBar from './components/navbar/NavBar';
 
 const AppRouter: React.FC = () => {
+  const location = useLocation();
   return (
-    <Routes>
-      <Route path='/' element={<Login />} />
+    <>
+      {location.pathname !== '/login' && location.pathname !== '/register' && <NavBar />}
+      <Routes>
+      <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
       <Route element={<AuthGuard />}>
-        <Route path='/main' element={<Main />} />
+        <Route path='/' element={<Main />} />
+        <Route path="/word" element={<WordProvider />}>
+          <Route index element={<Word />} />
+          <Route path="/word/add" element={<AddWord />} />
+        </Route>
       </Route>
       <Route path='*' element={<NotFound />} />
     </Routes>
+    </>
   )
 }
 

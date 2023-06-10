@@ -1,12 +1,12 @@
 import * as React from "react";
-import NavBar from "./navbar/NavBar";
+import { Link } from 'react-router-dom';
 
 const Main: React.FC = () => {
   return(
     <>
-      <NavBar />
       <div>
         <p>Welcome to Main Page</p>
+        <Link to={'/word'} className="btn btn-success">Word</Link>
       </div>
     </>
   );

@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import { registerUser } from '../../services/auth.service';
 import { useState } from 'react';
 import "./style.css";
+import { Link } from 'react-router-dom';
 
 interface FormData {
   name: string;
@@ -90,6 +91,12 @@ const Register: React.FC = () => {
           </div>
           <button type="submit" className="btn btn-primary" disabled={isSubmitted || !isDirty || !isValid}>Submit</button>
         </form>
+        <p>
+        Already member?<br />
+        <span className="line">
+          <Link to={'/login'} className="nav-link active">Sign in</Link>
+        </span>
+      </p>
       </div>
     </div>
   );

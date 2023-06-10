@@ -1,3 +1,9 @@
+body {
+  background: #FFDFBA;
+  background: -webkit-linear-gradient(90deg, #FFDFD3, #FFDFBA);
+  background: linear-gradient(90deg, #FFDFD3, #FFDFBA);
+}
+
 .loginContainer{
   display: flex;
   align-items: center;

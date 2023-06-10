@@ -1,7 +1,7 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
-import { logout } from '../../../services/auth.service';
+import { logout } from '../../services/auth.service';
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();

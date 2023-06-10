@@ -1,11 +1,11 @@
 import { Dialect } from "sequelize";
 
-type dbConfigProps = {
-  dbName: string,
-  dbUser: string,
-  dbPass: string,
-  dbHost: string,
-  dbDialect: Dialect
+interface dbConfigProps {
+  dbName: string;
+  dbUser: string;
+  dbPass: string;
+  dbHost: string;
+  dbDialect: Dialect;
 }
 
 export const dbConfig: dbConfigProps = {

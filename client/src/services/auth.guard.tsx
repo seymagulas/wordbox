@@ -4,7 +4,7 @@ import { getCurrentUser } from './auth.service';
 
 const AuthGuard: React.FC = () => {
     const authUser = getCurrentUser();
-    return authUser ? <Outlet /> : <Navigate to={'/'} replace />
+    return authUser ? <Outlet /> : <Navigate to={'/login'} replace />
 }
 
-export default AuthGuard
+export default AuthGuard;

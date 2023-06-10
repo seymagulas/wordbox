@@ -38,7 +38,7 @@ const Login: React.FC = () =>  {
       const result = await login({ email: data.email, password: data.password });
       if (result.accessToken) {
         await getUser();
-        navigate('/main');
+        navigate('/');
       }
     } catch (error) {
       toast.error(error.response.data.message);
