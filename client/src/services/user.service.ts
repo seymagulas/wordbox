@@ -12,5 +12,5 @@ export const getUser = () => {
     }
 
     return response.data;
-  });;
+  });
 };

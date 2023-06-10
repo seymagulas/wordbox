@@ -38,7 +38,3 @@ export const addWord = async (req: Request, res: Response) => {
     res.status(400).send({ message: 'Could not add a new word' });
   }
 }
-
-export const deleteWord = async (req: Request, res: Response) => {
-  
-}
