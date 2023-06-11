@@ -3,6 +3,7 @@ import { Meaning } from "../../interface";
 import SearchCard from "../searchCard/SearchCard";
 import { addWord } from "../../../../services/word.service";
 import './style.css'
+import { useNavigate } from "react-router-dom";
 
 interface SearchListProps {
   search: string;
@@ -11,8 +12,13 @@ interface SearchListProps {
 }
 
 const SearchList: React.FC<SearchListProps> = ({ search, meanings, handleFetchList }) => {
-  const handleAddWord = (meaning: string ) => {
-    addWord({ word: search, meaning}).then(() => { handleFetchList(); });
+  const navigate = useNavigate();
+  const handleAddWord = async (meaning: string ) => {
+    const response = await addWord({ word: search, meaning});
+    if (response) {
+      handleFetchList(); 
+      navigate('/word');
+    }
   };
   return(
     <div>

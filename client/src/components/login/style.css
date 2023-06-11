@@ -3,9 +3,9 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: #FFDFBA;
-  background: -webkit-linear-gradient(90deg, #FFDFD3, #FFDFBA);
-  background: linear-gradient(90deg, #FFDFD3, #FFDFBA);
+  background: #91DDF2;
+  background: -webkit-linear-gradient(90deg, #FFDFBA, #91DDF2);
+  background: linear-gradient(90deg, #FFDFBA, #91DDF2);
 }
 
 .loginContainer form {

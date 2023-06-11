@@ -44,3 +44,15 @@ export const searchWord = async ({ word }: SearchWordProps): Promise<Meaning[]> 
     toast.error(error);
   }
 }
+
+export interface DeleteWordProps {
+  id: number;
+}
+
+export const deleteWord = async ({ id }: DeleteWordProps) => {
+  try {
+    await axios.delete(API_URL + "/word/" + id, { headers: authHeader() });
+  } catch (error) {
+    toast.error(error.response.data.message);
+  }
+}

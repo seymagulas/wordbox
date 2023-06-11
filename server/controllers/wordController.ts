@@ -38,3 +38,16 @@ export const addWord = async (req: Request, res: Response) => {
     res.status(400).send({ message: 'Could not add a new word' });
   }
 }
+
+export const deleteWord = async (req: Request, res: Response) => {
+  try {
+    const customReq = req as CustomRequest;
+    const userId = customReq.user.id;
+    const wordId = customReq.params.wordId;
+    await Word.destroy({ where: { id: wordId, user_id: userId}});
+    res.status(200).send();
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ message: 'Could not delete the word' });
+  }
+}

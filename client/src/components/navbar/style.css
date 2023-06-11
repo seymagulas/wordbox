@@ -1,0 +1,10 @@
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #59606d !important;
+}
+
+.navbar {
+  background-color: #c7f1e7 !important;
+}

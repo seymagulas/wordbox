@@ -17,10 +17,10 @@ const AddWord: React.FC = () => {
     searchWord({ word }).then(meaningsData => setMeanings(meaningsData));
   }
   return(
-    <>
+    <div className="searchContainer">
       <SearchForm setSearch={setSearch} handleSearch={handleSearch} />
       <SearchList search={search} handleFetchList={handleFetchList} meanings={meanings} />
-    </>
+    </div>
   );
 }
 

@@ -2,6 +2,8 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../../services/auth.service';
+import logo from '../../assets/logo.png';
+import './style.css';
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -16,18 +18,24 @@ const NavBar: React.FC = () => {
   }
 
   return (
-    <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <div className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <span className="fs-4">WordBox</span>
+    <nav className="navbar navbar-expand-lg">
+      <div className="container">
+        <a className="navbar-brand" href="#">
+          <img src={logo} alt="logo" width="40" height="40" className="d-inline-block align-text-top"/>
+          WordBox
+        </a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link to={'#'} onClick={handleLogout} className="btn btn-secondary">Logout</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul className="nav nav-pills">
-        {
-          <li className="nav-item">
-            <Link to={'#'} onClick={handleLogout} className="nav-link active">Logout</Link>
-          </li>
-        }
-      </ul>
-    </header>
+    </nav>
   )
 }
 
