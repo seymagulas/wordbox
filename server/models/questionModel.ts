@@ -40,6 +40,6 @@ export const Question = db.define<QuestionModel>('Question', {
 });
 
 (async () => {
-  await Question.sync({force: true});
+  await Question.sync({alter: true});
 })();
 

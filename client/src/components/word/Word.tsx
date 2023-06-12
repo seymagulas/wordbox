@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import './style.css'
 import WordList from "./wordList/WordList";
 import { Link, useOutletContext } from 'react-router-dom';
 import { IWordProvider } from '../../providers/WordProvider';
+import './word.css'
 
 const Word: React.FC = () => {
   const { handleFetchList, words } = useOutletContext<IWordProvider>();

@@ -7,7 +7,12 @@ export const getList = async (req: Request, res: Response) => {
   try {
     const customReq = req as CustomRequest;
     const { id } = customReq.user;
-    const wordList = await Word.findAll({ where: { user_id: id }});
+    const wordList = await Word.findAll({ 
+      where: { user_id: id },
+      order: [
+        ['word', 'ASC']
+      ],
+    });
     res.status(200).send(wordList);
   } catch (error) {
     console.log(error);

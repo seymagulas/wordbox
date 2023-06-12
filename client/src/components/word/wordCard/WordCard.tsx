@@ -3,7 +3,7 @@ import { useOutletContext } from 'react-router-dom'
 import { WordResponse } from "../interface";
 import { deleteWord } from "../../../services/word.service";
 import { IWordProvider } from "../../../providers/WordProvider";
-import './style.css'
+
 
 export interface WordCardProps {
   word: WordResponse;

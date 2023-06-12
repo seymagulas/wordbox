@@ -6,8 +6,8 @@ import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 import { registerUser } from '../../services/auth.service';
 import { useState } from 'react';
-import "./style.css";
 import { Link } from 'react-router-dom';
+import "./register.css";
 
 interface FormData {
   name: string;

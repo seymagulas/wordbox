@@ -42,9 +42,11 @@ const generateQuestion = async (words: WordModel[], userId: number, quizId: numb
   answers.push(fakeAnswer.word);
   shuffleAnswers(answers);
   const response = {
+    quizId,
+    questionId: question.id,
     question: question.question,
     answers,
-    is_finished: false
+    isFinished: false
   }
   return response;
 }
@@ -82,16 +84,21 @@ const checkAnswer = async (req: Request) => {
   await quiz.save();
 }
 
-const finishQuiz = async (quizId: number, userId: number) => {
+const generateResult = async (userId: number, quizId: number) => {
   const quiz = await Quiz.findOne({ where: {id: quizId, user_id: userId}});
   if (!quiz) {
+    throw new Error();
+  }
+
+  const questions = await Question.findAll({ where: {quiz_id: quizId, user_id: userId}});
+  if (!questions) {
     throw new Error();
   }
 
   return {
     correct_count: quiz.correct_count,
     wrong_count: quiz.wrong_count,
-    is_finished: true
+    questions
   }
 }
 
@@ -115,7 +122,7 @@ export const createQuiz = async (req: Request, res: Response) => {
       correct_count: 0,
       wrong_count: 0
     });
-    const response = generateQuestion(words, userId, quiz.id);
+    const response = await generateQuestion(words, userId, quiz.id);
     res.status(201).send(response);
   } catch (error) {
     console.log(error);
@@ -127,32 +134,47 @@ export const createQuestion =async (req: Request, res: Response) => {
   try {
     const customReq = req as CustomRequest;
     const userId = customReq.user.id;
-    const quizId = customReq.params.id;
-    let response;
+    const quizId = customReq.params.quizId;
     
     const questions = await Question.findAll({where: {quiz_id: quizId, user_id: userId}});
     if (!questions) {
       throw new Error();
     }
 
-    checkAnswer(customReq);
-    if(questions.length === 5) {
-      response = await finishQuiz(Number(quizId), userId);
-    } else {
-      const userId = customReq.user.id;
-      const words = await Word.findAll({ 
-        where: { 
-          user_id: userId, 
-          correct_count: { 
-            [Op.lt]: 5
-          } 
-        }
-      });
-      response = generateQuestion(words, userId, Number(quizId));
+    await checkAnswer(customReq);
+
+    const words = await Word.findAll({ 
+      where: { 
+        user_id: userId, 
+        correct_count: { 
+          [Op.lt]: 5
+        } 
+      }
+    });
+    const response = await generateQuestion(words, userId, Number(quizId));
+    
+    if(questions.length === 4) {
+      response.isFinished = true;
     }
     res.status(201).send(response);
   } catch (error) {
     console.log(error);
     res.status(400).send({ message: 'Could not create the question' });
+  }
+}
+
+export const completeQuiz = async (req: Request, res: Response) => {
+  try {
+    const customReq = req as CustomRequest;
+    const userId = customReq.user.id;
+    const quizId = customReq.params.quizId;
+
+    await checkAnswer(customReq);
+
+    const response = await generateResult(userId, Number(quizId));
+    res.status(201).send(response);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ message: 'Could not complete the quiz' });
   }
 }

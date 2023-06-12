@@ -31,6 +31,6 @@ export const Quiz = db.define<QuizModel>('Quiz', {
 });
 
 (async () => {
-  await Quiz.sync({force: true});
+  await Quiz.sync({alter: true});
 })();
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useOutletContext } from 'react-router-dom'
-import SearchForm from "./searchForm/SearchForm";
-import SearchList from "./searchList/SearchList";
+import SearchForm from "./SearchForm";
+import SearchList from "./SearchList";
 import { searchWord } from "../../../services/word.service";
 import { Meaning } from "../interface";
 import { IWordProvider } from "../../../providers/WordProvider";

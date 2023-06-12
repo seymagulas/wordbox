@@ -10,6 +10,9 @@ import Word from './components/word/Word';
 import WordProvider from './providers/WordProvider';
 import AddWord from './components/word/addWord/AddWord';
 import NavBar from './components/navbar/NavBar';
+import Quiz from './components/quiz/Quiz';
+import Question from './components/question/Question';
+import QuizResult from './components/quiz/QuizResult';
 
 const AppRouter: React.FC = () => {
   const location = useLocation();
@@ -25,6 +28,9 @@ const AppRouter: React.FC = () => {
           <Route index element={<Word />} />
           <Route path="/word/add" element={<AddWord />} />
         </Route>
+        <Route path='/quiz' element={<Quiz />} />
+        <Route path='/quiz/result' element={<QuizResult />} />
+        <Route path='/question' element={<Question />} />
       </Route>
       <Route path='*' element={<NotFound />} />
     </Routes>

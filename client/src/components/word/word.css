@@ -14,9 +14,9 @@
 .cardContainer {
   padding: 16px;
   border-radius: 8px;
-  background: #c7f1e7;
-  background: -webkit-linear-gradient(90deg, #c7f1e7, #d0dada);
-  background: linear-gradient(90deg, #c7f1e7, #d0dada);
+  background: #e6eaea;
+  background: -webkit-linear-gradient(90deg, #e6eaea, #f2c3f2);
+  background: linear-gradient(90deg, #e6eaea, #f2c3f2);
   margin-bottom: 16px;
   margin-right: 8px;
   position: relative;
@@ -32,7 +32,6 @@
 
 .btn-add {
   margin-bottom: 16px;
-  background: #d0dada !important;
 }
 
 .btn-delete-word {
@@ -46,4 +45,13 @@
 
 .cardContainer:hover .btn-delete-word {
   display: block !important;
+}
+
+.addWordContainer {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Definition } from "../../interface";
+import { Definition } from "../interface";
 
 export interface SearchCardProps {
   item: Definition;

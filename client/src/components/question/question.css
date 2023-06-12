@@ -1,0 +1,24 @@
+.questionContainer h3 {
+  
+}
+
+.btn-answer {
+  width: 30%;
+  padding: 32px !important;
+}
+
+.answers div {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.button-div {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .btn-answer {
+    width: 100%;
+  }
+}

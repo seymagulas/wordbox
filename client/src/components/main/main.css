@@ -1,0 +1,38 @@
+.mainContainer p {
+  text-align: center;
+  padding: 16px;
+  font-size: x-large;
+  color: #59606d;
+}
+
+.mainButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: 100px auto;
+  max-width: 300px;
+  width: 100%;
+  font-size: xx-large;
+  font-weight: bold;
+  border-radius: 8px;
+  color: black;
+  text-decoration: none;
+  
+}
+.mainButton:hover {
+  cursor: pointer;
+}
+
+.word {
+  background: #FFE2CC;
+  background: -webkit-linear-gradient(90deg, #FFE2CC, #8190e9);
+  background: linear-gradient(90deg, #FFE2CC, #8190e9);
+}
+
+.quiz {
+  background: #d0dada;
+  background: -webkit-linear-gradient(90deg, #d0dada, #c7f1e7);
+  background: linear-gradient(90deg, #d0dada, #c7f1e7);
+}

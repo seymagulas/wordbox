@@ -20,8 +20,8 @@ const NavBar: React.FC = () => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
-        <a className="navbar-brand" href="#">
-          <img src={logo} alt="logo" width="40" height="40" className="d-inline-block align-text-top"/>
+        <a className="navbar-brand" href="/">
+          <img src={logo} alt="logo" width="50" height="50" className="d-inline-block align-text-top"/>
           WordBox
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">

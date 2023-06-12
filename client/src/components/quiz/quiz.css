@@ -1,0 +1,19 @@
+.quizResultContainer {
+  text-align: center;
+}
+
+.questionResult {
+  border-radius: 5px;
+  padding: 16px 32px;
+  margin-bottom: 8px;
+  color: white;
+  text-align: left;
+}
+
+.correctAnswer {
+  background-color: green;
+}
+
+.wrongAnswer {
+  background-color: red;
+}

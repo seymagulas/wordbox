@@ -6,8 +6,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { login } from '../../services/auth.service';
-import "./style.css";
 import { getUser } from "../../services/user.service";
+import logo from '../../assets/logo.png';
+import "./login.css";
 
 interface FormData {
   email: string;
@@ -36,7 +37,7 @@ const Login: React.FC = () =>  {
     setIsSubmitted(true);
     try {
       const result = await login({ email: data.email, password: data.password });
-      if (result.accessToken) {
+      if (result?.accessToken) {
         await getUser();
         navigate('/');
       }
@@ -48,8 +49,11 @@ const Login: React.FC = () =>  {
 
 
   return (
-    <section className="loginContainer">
-      <form onSubmit={handleSubmit(handleValidSubmit)}>
+    <section className="authContainer">
+      <form className="formContainer" onSubmit={handleSubmit(handleValidSubmit)}>
+        <span className="authLogo">
+        <img src={logo} alt="logo" width="80" height="80" className="d-inline-block align-text-top"/>
+        </span>
         <h1>Login</h1>
         <div className="mb-3">
           <label htmlFor="inputEmail" className="form-label">Email address</label>
@@ -69,8 +73,8 @@ const Login: React.FC = () =>  {
           <button type="submit" disabled={isSubmitted || !isDirty || !isValid} className="btn btn-primary">Login</button>
         </div>
         <p>
-          New Member?<br />
-          <Link to={'/register'} className="nav-link active">Sign up</Link>
+          New Member?
+          <Link to={'/register'} className="link-auth">Sign up</Link>
         </p>
       </form>
     </section>

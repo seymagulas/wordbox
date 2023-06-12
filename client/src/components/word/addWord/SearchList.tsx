@@ -1,8 +1,7 @@
 import React from "react";
-import { Meaning } from "../../interface";
-import SearchCard from "../searchCard/SearchCard";
-import { addWord } from "../../../../services/word.service";
-import './style.css'
+import { Meaning } from "../interface";
+import SearchCard from "./SearchCard";
+import { addWord } from "../../../services/word.service";
 import { useNavigate } from "react-router-dom";
 
 interface SearchListProps {
