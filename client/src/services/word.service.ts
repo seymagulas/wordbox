@@ -41,7 +41,7 @@ export const searchWord = async ({ word }: SearchWordProps): Promise<Meaning[]> 
     const response = await axios.get(DICTIONARY_URL + word);
     return response.data[0]['meanings'];
   } catch (error) {
-    toast.error(error);
+    toast.error(error.response.data.title);
   }
 }
 

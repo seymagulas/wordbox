@@ -7,7 +7,7 @@ const Main: React.FC = () => {
     <>
       <div className="mainContainer">
         <p>Welcome to WordBox</p>
-        <Link to={'/word'} className="mainButton word">Word</Link>
+        <Link to={'/word'} className="mainButton word">Words</Link>
         <Link to={'/quiz'} className="mainButton quiz">Quiz</Link>
       </div>
     </>

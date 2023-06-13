@@ -6,14 +6,18 @@
   border-radius: 5px;
   padding: 16px 32px;
   margin-bottom: 8px;
-  color: white;
+  color: rgb(62, 62, 62);
   text-align: left;
 }
 
 .correctAnswer {
-  background-color: green;
+  background-color: #C1E1C1;
 }
 
 .wrongAnswer {
-  background-color: red;
+  background-color: #FAA0A0;
+}
+
+.btn-add {
+  text-align: center;
 }

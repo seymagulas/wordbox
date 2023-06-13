@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import AuthGuard from './services/auth.guard';
 
-import Register from './components/register/Register';
-import Login from './components/login/Login';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 import Main from './components/main/Main';
 import NotFound from './components/notFound/NotFound';
 import Word from './components/word/Word';

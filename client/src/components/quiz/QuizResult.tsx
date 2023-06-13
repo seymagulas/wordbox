@@ -28,7 +28,7 @@ const QuizResult: React.FC = () => {
           </div>
         )
       })}
-      <Link to='/' className='btn btn-dark'>Main Menu</Link>
+      <Link to='/' className='btn btn-dark'>Main Menu <i className="bi bi-house-fill"></i></Link>
     </div>
   );
 }

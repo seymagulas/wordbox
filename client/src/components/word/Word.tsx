@@ -13,7 +13,7 @@ const Word: React.FC = () => {
 
   return(
     <div className='wordContainer container'>
-      <Link className='btn btn-success btn-add' to="/word/add">
+      <Link className='btn btn-primary btn-add mb-3' to="/word/add">
         + Add New Word
       </Link>
       <WordList words={words}/>

@@ -3,6 +3,7 @@ import { Meaning } from "../interface";
 import SearchCard from "./SearchCard";
 import { addWord } from "../../../services/word.service";
 import { useNavigate } from "react-router-dom";
+import { cardBackGroundColors } from "../../../utils/customBgColors";
 
 interface SearchListProps {
   search: string;
@@ -20,11 +21,11 @@ const SearchList: React.FC<SearchListProps> = ({ search, meanings, handleFetchLi
     }
   };
   return(
-    <div>
-      {meanings.map(meaning => 
+    <div className="searchListContainer">
+      {meanings.map((meaning, key1) => 
         meaning.definitions && 
-        meaning.definitions.map((definition, key) => 
-        <SearchCard key={key} handleAddWord={handleAddWord} type={meaning.partOfSpeech} item={definition}/>
+        meaning.definitions.map((definition, key2) => 
+        <SearchCard backgroundColor={cardBackGroundColors[key1 % 5]} key={key2} handleAddWord={handleAddWord} type={meaning.partOfSpeech} item={definition}/>
         ))}
     </div>
   );

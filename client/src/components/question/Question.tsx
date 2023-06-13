@@ -3,7 +3,8 @@ import { useLocation, useNavigate, } from 'react-router-dom';
 import './question.css'
 import { completeQuiz, createQuestion, CreateQuizResponse } from '../../services/quiz.service';
 
-const Question: React.FC = () => {
+
+const Question: React.FC= () => {
   const [selectedAnswer, setSelectedAnswer] = useState<string>();
   const [response, setResponse] = useState<CreateQuizResponse>();
   const location = useLocation();
@@ -51,8 +52,8 @@ const Question: React.FC = () => {
   }
 
   return(
-    <div className='questionContainer container'>
-      <div className='cardContainer'>
+    <div className='container'>
+      <div className='cardContainer questionContainer'>
         <h3>{'>'} {response?.question}</h3>
       </div>
       <div className='answers'>
@@ -65,8 +66,8 @@ const Question: React.FC = () => {
       </div>
       <div className='button-div'>
         {response?.isFinished ? 
-         (<button onClick={() => handleFinishQuiz()} className='btn btn-success'>Finish</button>) :
-         (<button onClick={() => handleNextQuestion()} className='btn btn-dark'>Continue <i className="bi bi-arrow-right-circle-fill"></i></button>) 
+         (<button disabled={!selectedAnswer} onClick={() => handleFinishQuiz()} className='btn btn-success'>Finish <i className="bi bi-check-circle-fill"></i></button>) :
+         (<button disabled={!selectedAnswer} onClick={() => handleNextQuestion()} className='btn btn-dark'>Continue <i className="bi bi-arrow-right-circle-fill"></i></button>) 
         }
       </div>
     </div>

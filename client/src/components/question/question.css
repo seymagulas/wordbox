@@ -1,5 +1,9 @@
-.questionContainer h3 {
-  
+.questionContainer {
+  background: #e8dff5;
+  background: -webkit-linear-gradient(90deg, #e8dff5, #9e90b6);
+  background: linear-gradient(90deg, #e8dff5, #9e90b6);
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .btn-answer {

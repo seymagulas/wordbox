@@ -6,11 +6,8 @@ import { Word, WordModel } from "../models/wordModel";
 import { Op } from "sequelize";
 
 const getRandomAnswer = (words: WordModel[], answers: string[], questionWords?: string[]) => {
-  let selectedAnswer;
-  const filteredAnswers = answers.filter(answer => !questionWords?.includes(answer));
-  do {
-    selectedAnswer = words[Math.floor(Math.random()*words.length)];
-  } while (filteredAnswers.includes(selectedAnswer.word));
+  const filteredWords = words.filter(word => !questionWords?.includes(word.word) && !answers.includes(word.word));
+  const selectedAnswer = filteredWords[Math.floor(Math.random() * filteredWords.length)];
   return selectedAnswer;
 }
 

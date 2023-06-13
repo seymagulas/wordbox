@@ -7,7 +7,8 @@ import * as Yup from 'yup';
 import { registerUser } from '../../services/auth.service';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./register.css";
+import loginLogo from '../../assets/loginLogo.png';
+import "./auth.css";
 
 interface FormData {
   name: string;
@@ -48,7 +49,7 @@ const Register: React.FC = () => {
         confirmPassword: data.confirmPassword
       });
 
-      if (result.data) {
+      if (result?.data) {
         navigate('/');
       }
     } catch (error) {
@@ -58,9 +59,12 @@ const Register: React.FC = () => {
   }
 
   return (
-    <div className="row">
-      <div className="col-6 offset-3">
-        <form onSubmit={handleSubmit(handleValidSubmit)}>
+      <section className="authContainer">
+        <form className="formContainer" onSubmit={handleSubmit(handleValidSubmit)}>
+          <span className="authLogo">
+            <img src={loginLogo} alt="loginLogo" width="80" height="80" className="d-inline-block align-text-top"/>
+            <label>WordBox</label>
+          </span>
           <div className="mb-3">
             <label htmlFor="inputName" className="form-label">Name</label>
             <input type="name" className="form-control" id="inputName" {...register('name')} />
@@ -89,16 +93,13 @@ const Register: React.FC = () => {
               {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
             </div>
           </div>
-          <button type="submit" className="btn btn-primary" disabled={isSubmitted || !isDirty || !isValid}>Submit</button>
+          <button type="submit" className="btn btn-primary btn-auth" disabled={isSubmitted || !isDirty || !isValid}>Register</button>
+          <p>
+            Already Member?
+            <Link to={'/login'} className="link-auth">Login</Link>
+          </p>
         </form>
-        <p>
-        Already member?<br />
-        <span className="line">
-          <Link to={'/login'} className="nav-link active">Sign in</Link>
-        </span>
-      </p>
-      </div>
-    </div>
+      </section>
   );
 }
 

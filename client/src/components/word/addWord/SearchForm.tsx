@@ -25,7 +25,7 @@ const SearchForm: React.FC<SearchFormProps> = ({handleSearch, setSearch}) => {
     register, 
     handleSubmit, 
     reset,
-    formState: { errors, isDirty, isValid } 
+    formState: { isDirty, isValid } 
   } = useForm<FormData>({
     mode: 'all',
     resolver: yupResolver(schema)
@@ -45,16 +45,11 @@ const SearchForm: React.FC<SearchFormProps> = ({handleSearch, setSearch}) => {
   return(
     <section className="addWordContainer">
     <form className="row row-cols-lg-auto g-3 align-items-center" onSubmit={handleSubmit(handleValidSubmit)}>
-      <div className="col-12">
-        <input type="text" className="form-control" id="inputWord" placeholder="Search Word" {...register('word')} />
-      </div>
-      <div className="col-12">
-        <button type="submit" disabled={isSubmitted || !isDirty || !isValid} className="btn btn-primary">Search</button>
+      <div className="input-group mb-3">
+        <input type="text" className="form-control" id="inputWord" placeholder="Search Word" {...register('word')} aria-label="Search Word" aria-describedby="button-addon2" />
+        <button disabled={isSubmitted || !isDirty || !isValid} className="btn btn-primary btn-add" type="submit" id="button-addon2"><i className="bi bi-search"></i></button>
       </div>
     </form>
-    <div className="form-text text-danger">
-      {errors.word && <p>{errors.word.message}</p>}
-    </div>
   </section>
   );
 }

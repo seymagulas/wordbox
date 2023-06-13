@@ -12,12 +12,16 @@ const AddWord: React.FC = () => {
 
   const { handleFetchList } = useOutletContext<IWordProvider>();
   
-  const handleSearch = (word: string) => {
+  const handleSearch = async (word: string) => {
     setSearch(word);
-    searchWord({ word }).then(meaningsData => setMeanings(meaningsData));
+    const response = await searchWord({ word });
+    if (response) {
+      setMeanings(response);
+    }
   }
+
   return(
-    <div className="searchContainer">
+    <div className="searchContainer container">
       <SearchForm setSearch={setSearch} handleSearch={handleSearch} />
       <SearchList search={search} handleFetchList={handleFetchList} meanings={meanings} />
     </div>

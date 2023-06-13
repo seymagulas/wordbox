@@ -2,7 +2,8 @@
   text-align: center;
   padding: 16px;
   font-size: x-large;
-  color: #59606d;
+  font-weight: bold;
+  color: black;
 }
 
 .mainButton {
@@ -11,7 +12,7 @@
   justify-content: center;
   align-items: center;
   height: 200px;
-  margin: 100px auto;
+  margin: 50px auto;
   max-width: 300px;
   width: 100%;
   font-size: xx-large;
@@ -26,13 +27,13 @@
 }
 
 .word {
-  background: #FFE2CC;
-  background: -webkit-linear-gradient(90deg, #FFE2CC, #8190e9);
-  background: linear-gradient(90deg, #FFE2CC, #8190e9);
+  background: #ffe5ec;
+  background: -webkit-linear-gradient(90deg, #ffe5ec, #c1d3fe);
+  background: linear-gradient(90deg, #ffe5ec, #c1d3fe);
 }
 
 .quiz {
-  background: #d0dada;
-  background: -webkit-linear-gradient(90deg, #d0dada, #c7f1e7);
-  background: linear-gradient(90deg, #d0dada, #c7f1e7);
+  background: #e8dff5;
+  background: -webkit-linear-gradient(90deg, #e8dff5, #9e90b6);
+  background: linear-gradient(90deg, #e8dff5, #9e90b6);
 }
