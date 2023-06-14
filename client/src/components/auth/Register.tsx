@@ -67,14 +67,14 @@ const Register: React.FC = () => {
           </span>
           <div className="mb-3">
             <label htmlFor="inputName" className="form-label">Name</label>
-            <input type="name" className="form-control" id="inputName" {...register('name')} />
+            <input type="name" className="form-control" id="inputName" {...register('name')} autoComplete="off" />
             <div className="form-text text-danger">
               {errors.name && <p>{errors.name.message}</p>}
             </div>
           </div>
           <div className="mb-3">
             <label htmlFor="inputEmail" className="form-label">Email address</label>
-            <input type="email" className="form-control" id="inputEmail" {...register('email')} />
+            <input type="email" className="form-control" id="inputEmail" {...register('email')} autoComplete="off" />
             <div className="form-text text-danger">
               {errors.email && <p>{errors.email.message}</p>}
             </div>

@@ -46,7 +46,7 @@ const SearchForm: React.FC<SearchFormProps> = ({handleSearch, setSearch}) => {
     <section className="addWordContainer">
     <form className="row row-cols-lg-auto g-3 align-items-center" onSubmit={handleSubmit(handleValidSubmit)}>
       <div className="input-group mb-3">
-        <input type="text" className="form-control" id="inputWord" placeholder="Search Word" {...register('word')} aria-label="Search Word" aria-describedby="button-addon2" />
+        <input type="text" className="form-control" id="inputWord" placeholder="Search Word" {...register('word')} aria-label="Search Word" aria-describedby="button-addon2" autoComplete="off" />
         <button disabled={isSubmitted || !isDirty || !isValid} className="btn btn-primary btn-add" type="submit" id="button-addon2"><i className="bi bi-search"></i></button>
       </div>
     </form>
