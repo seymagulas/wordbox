@@ -94,3 +94,51 @@ TABLESPACE pg_default;
 ALTER TABLE IF EXISTS public."Words"
     OWNER to root;
 ```
+
+**Quizzes table:**
+```sql
+-- Table: public.Quizzes
+
+-- DROP TABLE IF EXISTS public."Quizzes";
+
+CREATE TABLE IF NOT EXISTS public."Quizzes"
+(
+    id integer NOT NULL DEFAULT nextval('"Quizzes_id_seq"'::regclass),
+    user_id integer NOT NULL,
+    correct_count integer NOT NULL DEFAULT 0,
+    wrong_count integer NOT NULL DEFAULT 0,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL,
+    CONSTRAINT "Quizzes_pkey" PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Quizzes"
+    OWNER to root;
+```
+
+**Questions table:**
+```sql
+-- Table: public.Questions
+
+-- DROP TABLE IF EXISTS public."Questions";
+
+CREATE TABLE IF NOT EXISTS public."Questions"
+(
+    id integer NOT NULL DEFAULT nextval('"Questions_id_seq"'::regclass),
+    quiz_id integer NOT NULL,
+    user_id integer NOT NULL,
+    answer character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    question text COLLATE pg_catalog."default" NOT NULL,
+    is_correct boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL,
+    CONSTRAINT "Questions_pkey" PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Questions"
+    OWNER to root;
+```
