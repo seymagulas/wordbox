@@ -35,6 +35,7 @@ export const register = async (req: Request, res: Response) => {
       name,
       password: hash
     });
+    res.sendStatus(200);
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: 'Could not create user' });

@@ -1,47 +1,65 @@
-# wordbox
-## App Details
+# WordBox
 
-**Project name:**
-WordBox
+<p align="center">
+  <img src="images/wordbox-logo.png" />
+</p>
 
-**App Description:**
 Word memorization app for English language learners
 
-**Project description:**
-WordBox will be a word memorization app that will transform the way you learn and retain vocabulary. With WordBox, you will be able to effortlessly save and organize your favorite words, building a personalized word bank for future reference. WordBox will create custom quizzes based on your saved words to challenge and reinforce your memory.
+WordBox is a word memorization app that transforms the way you learn and retain vocabulary. With WordBox, you will be able to effortlessly save and organize your favorite words, building a personalized word bank for future reference. WordBox creates custom quizzes based on your saved words to challenge and reinforce your memory.
 
-**MVP:**
-To get started, users can easily register and create an account. Once registered, they gain access to a powerful word memorization tool. With the ability to save words along with their definitions, users can effortlessly build their own personal word library. Additionally, they can track their progress by their trophies. They will automatically win a trophy every time they answer a word correctly in the quiz. They can also remove the words.
+## Getting started
 
-When it's time to test their knowledge, users can take advantage of the interactive quizzes generated from their saved words. The app intelligently tracks their progress, ensuring that once a word is correctly identified at least five times, it is intelligently filtered out from future quizzes. This adaptive feature helps users focus on the words that require further practice, maximizing the efficiency of their learning journey.
+1. Clone the repo
+```
+git clone https://github.com/seymagulas/wordbox.git
+cd wordbox
+```
+
+2. Install dependencies for backend
+```
+cd server
+npm i
+```
+
+3. Start development server for backend
+```
+npm run dev
+```
+
+4. Install dependencies for frontend
+```
+cd client
+npm i
+```
+
+5. Start development server for frontend
+```
+npm start
+```
 
 ## Tech stack
 
-**Authentication:**
-- JWT
+- [React](https://react.dev) - Frontend library for building user interfaces
+- [TypeScript](https://www.typescriptlang.org) - Typed JavaScript extension for enchancing code quality
+- [Bootstrap](https://getbootstrap.com) - Frontend framework for building responsive website with pre-designed components
+- [Axios](https://axios-http.com/docs/intro) - Library for sending HTTP requests in JavaScript
+- [Yup](https://github.com/jquense/yup) - JavaScript library for validating data against predefined rules
+- [Font Awesome](https://fontawesome.com) - Customisable icon library
 
-**Front End:**
-- React
-- TypeScript
-- Bootstrap
-- Axios
-- Yup
-- Font Awesome
+- [Express.js](https://expressjs.com) - Lightweight web framework for Node.js that makes building web applications
+- [Sequelize](https://sequelize.org) - JavaScript library that makes working with databases easier by allowing you to use JavaScript code instead of complex database queries
+- [Postgres](https://www.postgresql.org) - Powerful open-source database for storing and managing structured data
 
-**Back End:**
-- Express.js
-- Sequelize
-- Postgres
-- TypeScript
+- [JWT](https://jwt.io) - App security with tokens
 
-**Data sources:**
-- API for getting the meanings of the words: https://dictionaryapi.dev
+- [Dictionary API](https://dictionaryapi.dev) - API for getting the meanings of the words
 
 ## Generating the DB schema
 
 You can run the following queries to create the DB in Postgres:
 
-**DB:**
+**DB structure:**
 ```sql
 -- Database: word_box
 -- DROP DATABASE IF EXISTS word_box;
@@ -142,3 +160,11 @@ TABLESPACE pg_default;
 ALTER TABLE IF EXISTS public."Questions"
     OWNER to root;
 ```
+
+## Author
+
+Seyma Gulas - [Github](https://github.com/seymagulas) - [LinkedIn](https://www.linkedin.com/in/seyma-gulas)
+
+## License
+
+This project is licensed under the MIT License.
