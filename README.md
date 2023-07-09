@@ -13,10 +13,10 @@ The WordBox intelligently tracks users' progress, ensuring that once a word has 
 ## Screenshots
 
 <p align="center">
-  <img src="images/set1.jpg" />
+  <img src="images/first-screen.jpg" />
 </p>
 <p align="center">
-  <img src="images/set2.jpg" />
+  <img src="images/second-screen.jpg" />
 </p>
 
 ## Getting started
