@@ -4,9 +4,20 @@
   <img src="images/wordbox-logo.png" />
 </p>
 
-Word memorization app for English language learners
+WordBox is a word memorization app designed specifically for English language learners.
 
-WordBox is a word memorization app that transforms the way you learn and retain vocabulary. With WordBox, you will be able to effortlessly save and organize your favorite words, building a personalized word bank for future reference. WordBox creates custom quizzes based on your saved words to challenge and reinforce your memory.
+WordBox transforms the way users learn and retain vocabulary. With WordBox, users will be able to effortlessly save and organize their favorite words, building a personalized word bank for future reference. WordBox creates custom quizzes based on the saved words to challenge and reinforce users' memory. Each time users answer a word correctly in the quiz, they automatically receive a trophy.
+
+The WordBox intelligently tracks users' progress, ensuring that once a word has been correctly identified at least five times, it is filtered out from future quizzes. This adaptive feature helps users focus on words that require further practice, maximizing the efficiency of their learning journey.
+
+## Screenshots
+
+<p align="center">
+  <img src="images/set1.jpg" />
+</p>
+<p align="center">
+  <img src="images/set2.jpg" />
+</p>
 
 ## Getting started
 
